@@ -12,6 +12,6 @@ city = "Cork";        // changed from Dublin
 
 let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
 
-// Step 4: List the second and third items
+
 console.log("Second item:", fruits[1]);  // Banana
 console.log("Third item:", fruits[2]);   // Mango
