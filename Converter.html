@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter</title>
+</head>
+<body>
+<script>
+const rates = {
+    USD: { EUR: 0.93, USD: 1 },
+    EUR: { USD: 1.08, EUR: 1 }
+};
+
+while (true) {
+    let amount = prompt("Enter amount to convert (or type 'exit' to quit):");
+    if (amount === null || amount.toLowerCase() === 'exit') {
+        alert("Exiting converter. Goodbye!");
+        break;
+    }
+
+    amount = parseFloat(amount);
+
+    if (isNaN(amount)) {
+        alert("Please enter a valid number!");
+        continue;
+    }
+
+    let fromCurrency = prompt("Enter the currency to convert from (USD or EUR):").toUpperCase();
+    let toCurrency = prompt("Enter the currency to convert to (USD or EUR):").toUpperCase();
+
+    if (!rates[fromCurrency] || !rates[toCurrency]) {
+        alert("Invalid currency code. Please use USD or EUR.");
+        continue;
+    }
+
+    let convertedAmount = amount * rates[fromCurrency][toCurrency];
+    alert(`${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`);
+}
+</script>
+</body>
+</html>
