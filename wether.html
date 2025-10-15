@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f0f0;
+        }
+        .weather-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .city-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Live Weather</h1>
+        
+        <p class="city-name" id="city">Loading...</p>
+        <p id="temperature"></p>
+        <p id="description"></p>
+        <p id="humidity"></p>
+
+        <div id="error-message" class="error"></div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
