@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playlist Generator</title>
+</head>
+<body>
+    <h1>Music Library Playlist Generator 🎶</h1>
+    <button onclick="generatePlaylist()">Generate New Playlist</button>
+    <ul id="playlistOutput"></ul>
+    <script>
+        const musicLibrary = {
+            "Rock": {
+                "Led Zeppelin": ["Stairway to Heaven", "Whole Lotta Love", "Kashmir"],
+                "Queen": ["Bohemian Rhapsody", "We Will Rock You", "Don't Stop Me Now"]
+            },
+            "Pop": {
+                "Michael Jackson": ["Billie Jean", "Thriller", "Smooth Criminal"],
+                "Madonna": ["Like a Prayer", "Vogue", "Material Girl"]
+            },
+            "Electronic": {
+                "Daft Punk": ["Around the World", "Get Lucky", "One More Time"],
+                "Deadmau5": ["Ghosts 'n' Stuff", "The Veldt", "Sofi Needs a Ladder"]
+            }
+        };
+        function generatePlaylist() {
+            const allSongs = [];
+            const genres = Object.keys(musicLibrary);
+            for (const genre of genres) {
+                const musicians = musicLibrary[genre];
+                for (const musician in musicians) {
+                    allSongs.push(...musicians[musician]);
+                }
+            }
+            const shuffledSongs = allSongs.sort(() => Math.random() - 0.5);
+            const playlistLength = 5;
+            const playlist = shuffledSongs.slice(0, playlistLength);
+            const output = document.getElementById("playlistOutput");
+            output.innerHTML = "";
+            if (playlist.length === 0) {
+                output.innerHTML = "<li>No songs available to create a playlist.</li>";
+                return;
+            }
+            for (const song of playlist) {
+                const li = document.createElement("li");
+                li.textContent = song;
+                output.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
