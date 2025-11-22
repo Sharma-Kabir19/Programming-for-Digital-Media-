@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kabir Sharma</title>
+    <link rel="stylesheet" href="style(js).css">
+</head>
+
+<body class="contact-page">
+<header class="navbar">
+    <div class="navbar-right">
+        <ul>
+            <li><a href="portfolio(js).html">Home</a></li>
+            <li><a href="project(js).html">Projects</a></li>
+            <li><a href="education(js).html">Education</a></li>
+            <li><a href="workex(js).html">Work Experience</a></li>
+            <li><a href="contact(js).html" class="active">Contact Me</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="contact-section">
+    <h1 class="section-title">Contact Me</h1>
+
+    <form id="contactForm" class="contact-form">
+        <label>Name</label>
+        <input type="text" id="name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Message</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit" class="btn">Send</button>
+    </form>
+
+    <p id="status"></p>
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
